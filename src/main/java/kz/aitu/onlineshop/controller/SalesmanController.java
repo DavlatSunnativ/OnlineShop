@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("salesman")
 public class SalesmanController {
@@ -53,5 +55,9 @@ public class SalesmanController {
         }else{
             return HttpStatus.NOT_FOUND;
         }
+    }
+    @GetMapping("getProductBySalesmanId/{id}")
+    public List<Product> getBySalesmanId(@PathVariable("id") int id){
+        return service.getProductBySalesmanId(id);
     }
 }

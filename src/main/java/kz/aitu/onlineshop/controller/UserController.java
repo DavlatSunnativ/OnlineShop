@@ -65,5 +65,29 @@ public class UserController {
     public List<User> getAllSalesmans(){
         return service.getAllSalesmans();
     }
+    @GetMapping("/getByName/{name}")
+    public List<User> getByName(@PathVariable("name") String name){
+        return service.getUserByName(name);
+    }
+    @GetMapping("/getBySurname/{surname}")
+    public List<User> getBySurname(@PathVariable("surname") String surname){
+        return service.getUserBySurname(surname);
+    }
+    @GetMapping("/getBuyerByName/{name}")
+    public List<User> getBuyerByName(@PathVariable("name") String name){
+        return service.getBuyerByName(name);
+    }
+    @GetMapping("/getBuyerBySurname/{surname}")
+    public List<User> getBuyerBySurname(@PathVariable("surname") String surname){
+        return service.getBuyerBySurname(surname);
+    }
+    @GetMapping("/getSalesmanByName/{name}")
+    public List<User> getSalesmanByName(@PathVariable("name") String name){
+        return service.getSalesmanByName(name);
+    }
+    @GetMapping("/getSalesmanBySurname/{surname}")
+    public List<User> getSalesmanBySurname(@PathVariable("surname") String surname){
+        return service.getSalesmanBySurname(surname);
+    }
 
 }

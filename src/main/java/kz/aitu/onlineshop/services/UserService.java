@@ -35,12 +35,6 @@ public class UserService implements UserServiceInterface {
     public User getByEmail(String email){
         return repo.findByEmail(email);
     }
-
-    @Override
-    public List<User> getByPassword(String password) {
-        return repo.findByPassword(password);
-    }
-
     @Override
     public List<User> getAllBuyers() {
         return repo.findByStatus(true);
@@ -49,5 +43,35 @@ public class UserService implements UserServiceInterface {
     @Override
     public List<User> getAllSalesmans() {
         return repo.findByStatus(false);
+    }
+
+    @Override
+    public List<User> getUserByName(String name) {
+        return repo.findByName(name);
+    }
+
+    @Override
+    public List<User> getUserBySurname(String surname) {
+        return repo.findBySurname(surname);
+    }
+
+    @Override
+    public List<User> getBuyerByName(String name) {
+        return repo.findByNameAndStatus(name,true);
+    }
+
+    @Override
+    public List<User> getBuyerBySurname(String surname) {
+        return repo.findBySurnameAndStatus(surname,true);
+    }
+
+    @Override
+    public List<User> getSalesmanByName(String name) {
+        return repo.findByNameAndStatus(name,false);
+    }
+
+    @Override
+    public List<User> getSalesmanBySurname(String surname) {
+        return repo.findBySurnameAndStatus(surname,false);
     }
 }

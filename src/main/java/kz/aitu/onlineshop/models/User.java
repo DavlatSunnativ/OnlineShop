@@ -14,11 +14,9 @@ public class User {
     private String name;
     private String surname;
     private boolean status;
-    private double bank;
+    private double bank = 20000;
     private String email;
     private String password;
 
-    public void setBank() {
-        bank = 1000.00;
-    }
+
 }

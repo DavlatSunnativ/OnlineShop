@@ -3,6 +3,8 @@ package kz.aitu.onlineshop.services.interfaces;
 import kz.aitu.onlineshop.models.Product;
 import kz.aitu.onlineshop.models.Salesman;
 
+import java.util.List;
+
 public interface SalesmanServiceInterface {
     Product create(Product product);
     void deleteById(int id);
@@ -10,4 +12,5 @@ public interface SalesmanServiceInterface {
     boolean updateQuantity(int id, int requestedQuantity);
     void updateBank(int id, double totalPrice);
     Salesman getByEmail(String email);
+    List<Product> getProductBySalesmanId(int id);
 }

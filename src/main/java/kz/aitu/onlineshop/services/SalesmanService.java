@@ -9,6 +9,8 @@ import kz.aitu.onlineshop.repositories.UserRepositoryInterface;
 import kz.aitu.onlineshop.services.interfaces.SalesmanServiceInterface;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SalesmanService implements SalesmanServiceInterface {
     private final ProductRepositoryInterface repo;
@@ -58,5 +60,11 @@ public class SalesmanService implements SalesmanServiceInterface {
     public Salesman getByEmail(String email) {
         return salesmanRepo.findByEmail(email);
     }
+
+    @Override
+    public List<Product> getProductBySalesmanId(int id) {
+        return repo.findBySalesmanId(id);
+    }
+
 
 }

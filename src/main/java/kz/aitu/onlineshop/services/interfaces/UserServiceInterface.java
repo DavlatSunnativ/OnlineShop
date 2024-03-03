@@ -7,8 +7,13 @@ public interface UserServiceInterface {
     User getById(int id);
     User create(User user);
     User getByEmail(String email);
-    List<User> getByPassword(String password);
     List<User> getAllBuyers();
     List<User> getAllSalesmans();
+    List<User> getUserByName(String name);
+    List<User> getUserBySurname(String surname);
+    List<User> getBuyerByName(String name);
+    List<User> getBuyerBySurname(String surname);
+    List<User> getSalesmanByName(String name);
+    List<User> getSalesmanBySurname(String surname);
 
 }
